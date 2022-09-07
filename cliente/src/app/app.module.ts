@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component' 
 import { TokenInterceptorService } from './service/token-interceptor.service';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TokenInterceptorService } from './service/token-interceptor.service';
     NuevaPanteraComponent,
     EditarPanteraComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

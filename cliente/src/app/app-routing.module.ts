@@ -7,6 +7,7 @@ import { NuevaPanteraComponent } from './components/nueva-pantera/nueva-pantera.
 import { LoginComponent } from './components/login/login.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
 import { LogoutComponent } from './components/logout/logout.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path:'logout',
     component:LogoutComponent
+  },
+  {
+    path:'signup',
+    component:SignupComponent
   },
   {
     path:'**',

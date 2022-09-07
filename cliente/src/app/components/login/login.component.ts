@@ -55,7 +55,9 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  crearCuenta (): void {}
+  crearCuenta (): void {
+    this.router.navigate(['/signup']);
+  }
 
 
 }
