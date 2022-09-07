@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/models/login-usuario';
+import { NuevoUsuario } from 'src/app/models/nuevo-usuario';
 import { AuthService } from 'src/app/service/auth.service';
 import { TokenService } from 'src/app/service/token.service';
 import { AuthenticationService } from '../../service/authentication.service';
@@ -53,5 +54,8 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+
+  crearCuenta (): void {}
+
 
 }
