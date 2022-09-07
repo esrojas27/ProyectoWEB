@@ -14,7 +14,7 @@
       </li>
       
       <li class="nav-item">
-        <a *ngIf="loginService.isUserLoggedIn()" class="nav-link"  routerLink="/logout"><i class="fas fa-plus-circle"></i> Logout</a>
+        <a *ngIf="loginService.isUserLoggedIn()" class="nav-link"  (click)="logout()"><i class="fas fa-plus-circle"></i> Logout</a>
       </li>
 
       <li class="nav-item">
