@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 export class ListPanterasComponent implements OnInit {
 
   panteras: Pantera[] = [];
+  page: number = 1;
 
   constructor(private panteraService:PanteraService) { }
 
