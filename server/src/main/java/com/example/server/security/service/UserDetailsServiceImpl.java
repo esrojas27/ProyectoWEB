@@ -1,15 +1,21 @@
 package com.example.server.security.service;
 
-import com.example.server.entity.Usuario;
-import com.example.server.entity.UsuarioPrincipal;
-import com.example.server.service.UsuarioService;
+import com.example.server.security.entity.Usuario;
+import com.example.server.security.entity.UsuarioMain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
+/**
+ * Clase que convierte la clase usuario en un UsuarioMain
+ * UserDetailsService es propia de Spring Security
+ */
 @Service
+@Transactional
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
@@ -17,7 +23,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String nombreUsuario) throws UsernameNotFoundException {
-        Usuario usuario = usuarioService.getByNombreUsuario(nombreUsuario).get();
-        return UsuarioPrincipal.build(usuario);
+        Usuario usuario = usuarioService.getByUsuario(nombreUsuario).get();
+        return UsuarioMain.build(usuario);
     }
 }
