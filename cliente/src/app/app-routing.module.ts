@@ -4,27 +4,42 @@ import { DetallePanteraComponent } from './components/detalle-pantera/detalle-pa
 import { EditarPanteraComponent } from './components/editar-pantera/editar-pantera.component';
 import { ListPanterasComponent } from './components/list-panteras/list-panteras.component';
 import { NuevaPanteraComponent } from './components/nueva-pantera/nueva-pantera.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGaurdService } from './service/auth-gaurd.service';
+import { LogoutComponent } from './components/logout/logout.component';
 
 const routes: Routes = [
   {
     path:'',
-    component:ListPanterasComponent
+    component:ListPanterasComponent,
+    canActivate:[AuthGaurdService]
   },
   {
     path:'detalle/:id',
-    component:DetallePanteraComponent
+    component:DetallePanteraComponent,
+    canActivate:[AuthGaurdService]
   },
   {
     path:'nuevo',
-    component:NuevaPanteraComponent
+    component:NuevaPanteraComponent,
+    canActivate:[AuthGaurdService]
   },
   {
     path:'editar/:id',
-    component:EditarPanteraComponent
+    component:EditarPanteraComponent,
+    canActivate:[AuthGaurdService]
+  },
+  {
+    path:'login',
+    component:LoginComponent
+  },
+  {
+    path:'logout',
+    component:LogoutComponent
   },
   {
     path:'**',
-    redirectTo:'',
+    redirectTo:'login',
     pathMatch:'full'
   }
 ];

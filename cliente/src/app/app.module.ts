@@ -10,7 +10,9 @@ import { EditarPanteraComponent } from './components/editar-pantera/editar-pante
 
 //Externos
 import { HttpClientModule } from '@angular/common/http' 
-import { FormsModule } from '@angular/forms' 
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component' 
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FormsModule } from '@angular/forms'
     ListPanterasComponent,
     DetallePanteraComponent,
     NuevaPanteraComponent,
-    EditarPanteraComponent
+    EditarPanteraComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
