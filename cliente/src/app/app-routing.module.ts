@@ -6,7 +6,6 @@ import { ListPanterasComponent } from './components/list-panteras/list-panteras.
 import { NuevaPanteraComponent } from './components/nueva-pantera/nueva-pantera.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
-import { LogoutComponent } from './components/logout/logout.component';
 import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
@@ -33,10 +32,6 @@ const routes: Routes = [
   {
     path:'login',
     component:LoginComponent
-  },
-  {
-    path:'logout',
-    component:LogoutComponent
   },
   {
     path:'signup',
