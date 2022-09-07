@@ -9,10 +9,11 @@ import { NuevaPanteraComponent } from './components/nueva-pantera/nueva-pantera.
 import { EditarPanteraComponent } from './components/editar-pantera/editar-pantera.component';
 
 //Externos
-import { HttpClientModule } from '@angular/common/http' 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http' 
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component' 
+import { TokenInterceptorService } from './service/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,13 @@ import { LogoutComponent } from './components/logout/logout.component'
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

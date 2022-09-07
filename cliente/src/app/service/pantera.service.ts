@@ -6,7 +6,10 @@ import { Pantera } from '../models/pantera';
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class PanteraService {
+  
 
   panteraURL = 'http://localhost:8080/pantera/';
 
