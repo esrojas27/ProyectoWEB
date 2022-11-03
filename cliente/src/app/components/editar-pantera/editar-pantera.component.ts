@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pantera } from 'src/app/models/pantera';
+import { EjercitoService } from 'src/app/service/ejercito.service';
 import { PanteraService } from 'src/app/service/pantera.service';
 import Swal from 'sweetalert2';
 
@@ -14,33 +16,48 @@ export class EditarPanteraComponent implements OnInit {
   pantera: Pantera = {};
   id:string='';
 
-  constructor(private panteraService:PanteraService,private activatedRoute: ActivatedRoute,private router: Router ) { }
+  ejercitos:any=[];
+
+  idEjercito:string='';
+
+  constructor(private panteraService:PanteraService,private ejercitoService:EjercitoService,private activatedRoute: ActivatedRoute,private router: Router ) {
+
+   }
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params['id'];
-    this.panteraService.detail(Number(this.id)).subscribe({
+    this.ejercitoService.lista().subscribe({
       next:res=>{
-        this.pantera=res;
+        this.ejercitos = res;
+        this.panteraService.detail(Number(this.id)).subscribe({
+          next:res=>{
+            this.pantera=res;
+          },
+          error:(err)=>{
+            Swal.fire({
+              title: 'Error en la creacion',
+              text:err,
+              icon: 'error',
+              showCloseButton:true,
+              confirmButtonText:"Aceptar",
+              confirmButtonColor: "#DD6B55",
+            })
+            this.router.navigate(['/']);
+          }
+        })
       },
       error:(err)=>{
-        Swal.fire({
-          title: 'Error en la creacion',
-          text:err,
-          icon: 'error',
-          showCloseButton:true,
-          confirmButtonText:"Aceptar",
-          confirmButtonColor: "#DD6B55",
-        })
-        this.router.navigate(['/']);
+        console.log(err);
       }
-    })
+    });
+    
   }
 
   onUpdate(): void {
     this.panteraService.update(Number(this.id), this.pantera).subscribe({
       next:res=>{
         Swal.fire({
-          title: 'Pantera Creada',
+          title: 'Pantera Actualizada',
           icon: 'success',
           showCloseButton:true,
           confirmButtonText:"Aceptar",
@@ -50,7 +67,7 @@ export class EditarPanteraComponent implements OnInit {
       },
       error:(err)=>{
         Swal.fire({
-          title: 'Error en la creacion',
+          title: 'Error en la Actualizacion',
           text:err,
           icon: 'error',
           showCloseButton:true,
@@ -61,6 +78,10 @@ export class EditarPanteraComponent implements OnInit {
       }
       
     });
+  }
+
+  definirIdEjer(idEjer:any){
+    this.pantera.idEjercito=idEjer.target.value;
   }
 
 }

@@ -15,6 +15,10 @@ import { LoginComponent } from './components/login/login.component';
 import { TokenInterceptorService } from './service/token-interceptor.service';
 import { SignupComponent } from './components/signup/signup.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ListEjercitoComponent } from './components/list-ejercito/list-ejercito.component';
+import { EditarEjercitoComponent } from './components/editar-ejercito/editar-ejercito.component';
+import { NuevoEjercitoComponent } from './components/nuevo-ejercito/nuevo-ejercito.component';
+import { DetalleEjercitoComponent } from './components/detalle-ejercito/detalle-ejercito.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NuevaPanteraComponent,
     EditarPanteraComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ListEjercitoComponent,
+    EditarEjercitoComponent,
+    NuevoEjercitoComponent,
+    DetalleEjercitoComponent
   ],
   imports: [
     BrowserModule,

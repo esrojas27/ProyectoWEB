@@ -2,16 +2,14 @@ package com.example.server.dto;
 
 import com.sun.istack.NotNull;
 
-public class PanteraDto {
+public class EjercitoDto {
 
     private String nombre;
 
-    private int idEjercito;
-
-    public PanteraDto() {
+    public EjercitoDto() {
     }
 
-    public PanteraDto(String nombre) {
+    public EjercitoDto(String nombre) {
         this.nombre = nombre;
     }
 
@@ -21,13 +19,5 @@ public class PanteraDto {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public int getIdEjercito() {
-        return idEjercito;
-    }
-
-    public void setIdEjercito(int idEjercito) {
-        this.idEjercito = idEjercito;
     }
 }

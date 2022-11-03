@@ -12,6 +12,12 @@
       <li class="nav-item">
         <a class="nav-link"  routerLink="/nuevo"><i class="fas fa-plus-circle"></i> Registrar Pantera</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/listEjercitos"><i class="far fa-list-alt"></i> Ejercitos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  routerLink="/nuevoEjercito"><i class="fas fa-plus-circle"></i> Registrar Ejercito</a>
+      </li>
       
       <li class="nav-item">
         <a *ngIf="loginService.isUserLoggedIn()" class="nav-link"  (click)="logout()"><i class="fas fa-plus-circle"></i> Logout</a>

@@ -7,6 +7,10 @@ import { NuevaPanteraComponent } from './components/nueva-pantera/nueva-pantera.
 import { LoginComponent } from './components/login/login.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
 import { SignupComponent } from './components/signup/signup.component';
+import { NuevoEjercitoComponent } from './components/nuevo-ejercito/nuevo-ejercito.component';
+import { DetalleEjercitoComponent } from './components/detalle-ejercito/detalle-ejercito.component';
+import { EditarEjercitoComponent } from './components/editar-ejercito/editar-ejercito.component';
+import { ListEjercitoComponent } from './components/list-ejercito/list-ejercito.component';
 
 const routes: Routes = [
   {
@@ -15,8 +19,18 @@ const routes: Routes = [
     canActivate:[AuthGaurdService]
   },
   {
+    path:'listEjercitos',
+    component:ListEjercitoComponent,
+    canActivate:[AuthGaurdService]
+  },
+  {
     path:'detalle/:id',
     component:DetallePanteraComponent,
+    canActivate:[AuthGaurdService]
+  },
+  {
+    path:'detalleEjercito/:id',
+    component:DetalleEjercitoComponent,
     canActivate:[AuthGaurdService]
   },
   {
@@ -25,8 +39,18 @@ const routes: Routes = [
     canActivate:[AuthGaurdService]
   },
   {
+    path:'nuevoEjercito',
+    component:NuevoEjercitoComponent,
+    canActivate:[AuthGaurdService]
+  },
+  {
     path:'editar/:id',
     component:EditarPanteraComponent,
+    canActivate:[AuthGaurdService]
+  },
+  {
+    path:'editarEjercito/:id',
+    component:EditarEjercitoComponent,
     canActivate:[AuthGaurdService]
   },
   {

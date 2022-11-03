@@ -7,18 +7,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Pantera {
+public class Ejercito {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
-    private int idEjercito;
 
-    public Pantera() {
+    public Ejercito() {
     }
 
-    public Pantera(String nombre) {
+    public Ejercito(String nombre) {
         this.nombre = nombre;
     }
 
@@ -36,13 +35,5 @@ public class Pantera {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public int getIdEjercito() {
-        return idEjercito;
-    }
-
-    public void setIdEjercito(int idEjercito) {
-        this.idEjercito = idEjercito;
     }
 }
