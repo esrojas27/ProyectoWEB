@@ -6,9 +6,9 @@
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre"
                     [(ngModel)]="pantera.nombre" required>
-                    <select class="form-control" [(ngModel)]="pantera.idEjercito" (change)="definirIdEjer($event)">
+                    <select class="form-control" [(ngModel)]="pantera.idEjercito"  name="idEjercito" (change)="definirIdEjer($event)">
                         <option></option>
-                        <option *ngFor="let ejercito of ejercitos"  value="{{ejercito.id}}" >{{ejercito.nombre}}</option>
+                        <option *ngFor="let ejercito of ejercitos" value="{{ejercito.id}}" >{{ejercito.nombre}}</option>
                     </select>
                 </div>
                 <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Actualizar</button>

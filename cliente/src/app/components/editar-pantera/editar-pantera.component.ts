@@ -32,6 +32,7 @@ export class EditarPanteraComponent implements OnInit {
         this.panteraService.detail(Number(this.id)).subscribe({
           next:res=>{
             this.pantera=res;
+            console.log('pantera: ', this.pantera);
           },
           error:(err)=>{
             Swal.fire({
